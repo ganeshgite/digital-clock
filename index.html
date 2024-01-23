@@ -1,0 +1,96 @@
+<html>
+<head>
+<title> </title>
+<style type="text/css">
+*{  margin:0px;
+    padding:0px;
+}
+.container{width:100vw;
+        height:100vh;
+        display:flex;
+        background-color:orange;
+        justify-content:center;
+        align-items:center;
+        align-items:center;
+        text-align:center;
+        overflow:hidden;
+        border:1px solid #9E9E9E;
+        text-shadow:5px 5px 5px rgba(0,0,0,0.5);
+        font-weight:10000;
+		-webkit-box-reflect: below 3px linear-gradient(transparent,#0004);
+    
+}
+.clock{ background-color:red;
+    color:white;
+    font-size:3rem;
+    border:2px solid red;
+    border-radius:5px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.5);
+    overflow:hidden;
+    width:50vw;
+    height:10vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+	-webkit-box-reflect: below 3px linear-gradient(transparent,#0004);
+    
+}
+.clock:hover{ background-color:yellow;
+    color:black;
+    font-size:3rem;
+    border:2px solid red;
+    border-radius:7px;
+    box-shadow:below 5px 5px 5px rgba(0,0,0,0.5),below 5px 5px 100px rgba(0,0,0,0.5);
+    overflow:hidden;
+    width:50vw;
+    height:10vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    
+}
+
+</style>
+
+<script type="text/javascript">
+
+setInterval(displayclock,500);
+function displayclock()
+{
+   var time = new Date();
+   var hour = time.getHours();
+   var min  =  time.getMinutes();
+   var sec  = time.getSeconds();
+   
+   if(hour > 12)
+   { hour = hour-12; }
+   else if(hour == 0)
+   {hour=12;}
+   
+   else if(hour<10)
+   {hour='0'+hour;}
+   
+   else if(min<10)
+   {min = '0' + min;}
+   
+   else if(sec<10)
+   {sec = '0' + sec;}
+   
+   document.getElementById("clock").innerHTML= hour + ':' + min + ':' + sec;
+   
+   
+}
+
+</script>
+</head>
+<body>
+<div class="container">
+<div class="box">
+<h1> DIGITAL CLOCK </h1>
+<br> <br> <br>
+<div class="clock" id="clock"></div>
+</div>
+</body>
+</html>
